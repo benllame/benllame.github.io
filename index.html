@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamín Llancao | Data Science & Engineering</title>
+    <!-- Google Fonts: Monospace dominance + technical sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Persistent Grid Background -->
+    <div class="engineering-grid"></div>
+
+    <!-- Telemetry Overlay -->
+    <div class="telemetry-bar">
+        <span class="telemetry-item" id="sys-time">SYS_TIME: 00:00:00</span>
+        <span class="telemetry-item">STATUS: <span class="status-ok">DISPONIBLE</span></span>
+        <span class="telemetry-item">LATENCY: <span id="ping-sim">12</span>ms</span>
+        <span class="telemetry-item">USER_IP: 127.0.0.1</span>
+    </div>
+
+    <!-- Main Navigation (Terminal Tab Style) -->
+    <nav class="nav-tabs">
+        <div class="brand">
+            <span class="prompt">~ $</span> ./bllancao.sh
+        </div>
+        <div class="tabs-container">
+            <a href="#init" class="tab active">[0] INICIO</a>
+            <a href="#projects" class="tab">[1] PROYECTOS</a>
+            <a href="#stack" class="tab">[2] STACK</a>
+            <a href="#contact" class="tab">[3] CONTACTO</a>
+        </div>
+        <div class="nav-actions">
+            <a href="https://github.com/benllame" target="_blank" class="nav-btn"><i class="fab fa-github"></i> <span
+                    class="repo-text">REPO</span></a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="system-view">
+
+        <!-- SECTION 0: Hero / Identity -->
+        <section class="module" id="init">
+            <div class="module-header">
+                <h2><span class="index">00</span> > system.identity</h2>
+            </div>
+            <div class="module-content hero-grid">
+
+                <div class="terminal-window">
+                    <div class="terminal-toolbar">
+                        <span class="btn close"></span><span class="btn min"></span><span class="btn max"></span>
+                        <span class="title">bash - ssh llancao@production</span>
+                    </div>
+                    <div class="terminal-body" id="hero-typewriter">
+                        <span class="prompt">$</span> whoami<br>
+                        <span class="output highlight">Benjamín Llancao</span><br>
+                        <span class="prompt">$</span> cat role.txt<br>
+                        <span class="output">Data Scientist & Machine Learning Engineer</span><br>
+                        <span class="prompt">$</span> grep -i "focus" sys_profile.yaml<br>
+                        <span class="output">Construyendo sistemas de IA end-to-end. Experiencia en soluciones
+                            multimodales (Computer
+                            Vision, NLP) y despliegue a infraestructura cloud production-grade. Enfoque transversal en
+                            MLOps, CI/CD y
+                            observabilidad de modelos.</span><br>
+                        <span class="prompt blink">_</span>
+                    </div>
+                </div>
+
+                <div class="profile-summary-box fade-in-up">
+                    <div class="vis-header">resumen.perfil & contacto</div>
+                    <div class="summary-content">
+                        <ul class="clean-list">
+                            <li><i class="fas fa-check"></i> <strong>Sistemas ML End-to-end:</strong> Del prototipo a
+                                producción.</li>
+                            <li><i class="fas fa-check"></i> <strong>Data Pipelines:</strong> Escalables, robustos y
+                                cloud-native.</li>
+                            <li><i class="fas fa-check"></i> <strong>MLOps & CI/CD:</strong> Operación continua y
+                                observabilidad.</li>
+                        </ul>
+
+                        <div class="highlight-contact mt-2">
+                            <span class="label">STATUS:</span> <span class="value success">Disponible para
+                                Contratación</span>
+                        </div>
+
+                        <div class="contact-actions mt-2">
+                            <a href="mailto:benjallancao@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i>
+                                benjallancao@gmail.com</a>
+                            <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank"
+                                class="btn-secondary"><i class="fab fa-linkedin"></i> Conectar en LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: Projects -->
+        <div id="projects"> <!-- Anchor wrapper for both projects -->
+            <section class="module mt-10">
+                <div class="module-header alternate">
+                    <h2><span class="index">01.a</span> > infraestructura.data_engineering</h2>
+                    <div class="module-badges">
+                        <span class="tech-badge">GCP Dataflow</span>
+                        <span class="tech-badge">Apache Airflow</span>
+                        <span class="tech-badge">Terraform</span>
+                    </div>
+                </div>
+
+                <div class="module-content architecture-layout">
+                    <div class="text-panel">
+                        <h3 class="sys-title">Plataforma Datos E-Commerce OLIST</h3>
+                        <p class="sys-desc">
+                            Arquitectura ETL/ELT production-grade que procesa datos transaccionales reales.
+                            Diseñado para escalabilidad y alta disponibilidad utilizando servicios de Google Cloud.
+                        </p>
+
+                        <ul class="specs-list">
+                            <li><i class="fas fa-angle-right"></i> <strong>Orquestación:</strong> DAGs de Apache Airflow
+                                manejando dependencias complejas y SLAs.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Procesamiento:</strong> Transformaciones
+                                distribuidas tanto *Batch* como *Streaming* en GCP Dataflow (Apache Beam).</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Warehouse:</strong> Tablas analíticas en
+                                BigQuery con particionamiento y clustering para queries optimizadas.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>IaC:</strong> 28 recursos desplegados
+                                automáticamente bajo control de versiones mediante Terraform.</li>
+                        </ul>
+
+                        <a href="https://github.com/benllame/Olist-E-Commerce-Data-Platform" target="_blank"
+                            class="action-btn">
+                            [ REPO ]
+                        </a>
+                    </div>
+
+                    <div class="diagram-panel fade-in-right">
+                        <!-- CSS Architecture Diagram -->
+                        <div class="arch-flow">
+                            <div class="node source">GCS / PubSub<br><small>(Ingesta)</small></div>
+                            <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
+
+                            <div class="node orchestration">
+                                AIRFLOW<br><small>(Orquestación)</small>
+                                <div class="status-dot pulsing"></div>
+                            </div>
+
+                            <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
+
+                            <div class="node processing">
+                                DATAFLOW<br><small>(Apache Beam)</small>
+                                <div class="worker-pool">
+                                    <span class="worker w1"></span><span class="worker w2"></span><span
+                                        class="worker w3"></span>
+                                </div>
+                            </div>
+
+                            <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
+                            <div class="node destination">BIGQUERY<br><small>(Data Warehouse)</small></div>
+                        </div>
+                        <div class="code-snippet mt-2 code-border">
+                            <pre><code><span class="cmd">terraform</span> <span class="arg">apply</span> <span class="arg">-auto-approve</span>
+Apply complete! Resources: 28 added, 0 changed, 0 destroyed.
+
+Outputs:
+bigquery_dataset_id = "olist_analytics"
+dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1B: Anomaly Detection / Vision -->
+            <section class="module mt-10">
+                <div class="module-header alternate-2">
+                    <h2><span class="index">01.b</span> > modelos.computer_vision</h2>
+                    <div class="module-badges">
+                        <span class="tech-badge anomaly-color">DINOv2 ViT</span>
+                        <span class="tech-badge anomaly-color">ONNX</span>
+                        <span class="tech-badge anomaly-color">Grafana</span>
+                    </div>
+                </div>
+
+                <div class="module-content vision-layout">
+
+                    <div class="vision-interface fade-in-left">
+                        <div class="interface-header">motor_inferencia.exe</div>
+                        <div class="interface-body">
+                            <div class="camera-feed">
+                                <div class="scanline"></div>
+                                <!-- Mockup of a defective part detection -->
+                                <div class="part-matrix">
+                                    <span class="p">0</span><span class="p">0</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span>
+                                    <span class="p">0</span><span class="p">0</span><span class="p">1</span><span
+                                        class="p">1</span><span class="p">0</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span>
+                                    <span class="p">0</span><span class="p">1</span><span class="p val">X</span><span
+                                        class="p val">X</span><span class="p">1</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span>
+                                    <span class="p">0</span><span class="p">0</span><span class="p">1</span><span
+                                        class="p">1</span><span class="p">0</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span>
+                                    <span class="p">0</span><span class="p">0</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span><span class="p">0</span><span
+                                        class="p">0</span><span class="p">0</span>
+                                </div>
+                                <div class="bounding-box">
+                                    <span class="bbox-label">PROB_DEFECTO: 0.998</span>
+                                </div>
+                            </div>
+                            <div class="metrics-dashboard">
+                                <div class="dash-item">
+                                    <span class="dash-lbl">MODELO</span>
+                                    <span class="dash-val">ViT-B/14</span>
+                                </div>
+                                <div class="dash-item">
+                                    <span class="dash-lbl">FPS</span>
+                                    <span class="dash-val">64.2</span>
+                                </div>
+                                <div class="dash-item alert">
+                                    <span class="dash-lbl">ESTADO</span>
+                                    <span class="dash-val">OUTLIER_DETECTED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-panel">
+                        <h3 class="sys-title">Detección de Anomalías Industriales</h3>
+                        <p class="sys-desc">
+                            Sistema de localización de defectos a nivel píxel utilizando features del modelo fundacional
+                            de Meta (DINOv2)
+                            y k-NN. Reescrito sin dependencia directa a PyTorch para un despliegue optimizado.
+                        </p>
+
+                        <ul class="specs-list">
+                            <li><i class="fas fa-angle-right"></i> <strong>Modelo:</strong> Extracción profunda de
+                                features usando DINOv2.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Despliegue:</strong> Empaquetado vía ONNX
+                                Runtime y envuelto en endpoints HTTP altamente paralelizables con FastAPI.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Observabilidad:</strong> Monitoreado en
+                                tiempo real con Prometheus y Grafana (latencia del endpoint, tamaño del pool).</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>CI/CD:</strong> Testing y validación
+                                automatizada mediante pipelines en GitHub Actions.</li>
+                        </ul>
+
+                        <a href="https://github.com/benllame/Anomaly-Detector" target="_blank" class="action-btn">
+                            [ REPO ]
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- End Projects Wrapper -->
+
+        <!-- SECTION 2: Technical Stack -->
+        <section class="module mt-10" id="stack">
+            <div class="module-header">
+                <h2><span class="index">02</span> > core.tech_stack</h2>
+            </div>
+            <div class="module-content">
+                <div class="tech-grid fade-in-up">
+                    <div class="tech-card">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <h3>ML Frameworks</h3>
+                        <p>PyTorch, TensorFlow, scikit-learn, HuggingFace Transformers, ONNX Runtime</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="card-icon"><i class="fas fa-database"></i></div>
+                        <h3>Ingeniería de Datos</h3>
+                        <p>Apache Airflow, Apache Beam, Google BigQuery, Pandas</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="card-icon"><i class="fas fa-server"></i></div>
+                        <h3>MLOps & DevOps</h3>
+                        <p>Docker, Terraform, GitHub Actions, Prometheus, Grafana</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <h3>Backend & Bases de Datos</h3>
+                        <p>Python, FastAPI, SQL Server, MySQL, MongoDB, Redis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Contacto -->
+        <section class="module mt-10" id="contact">
+            <div class="module-header alternate-2">
+                <h2><span class="index">03</span> > net.contacto</h2>
+            </div>
+            <div class="module-content">
+                <div class="code-border fade-in-up" style="max-width: 600px;">
+                    <pre><code><span class="prompt">$</span> ping -c 3 benjallancao@gmail.com
+PING benjallancao@gmail.com: 56 data bytes
+64 bytes from benjamin.llancao: icmp_seq=1 ttl=119 time=12.4 ms
+64 bytes from benjamin.llancao: icmp_seq=2 ttl=119 time=11.1 ms
+64 bytes from benjamin.llancao: icmp_seq=3 ttl=119 time=10.8 ms
+
+--- ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+
+<span class="prompt">$</span> ./connect.sh
+<span class="output highlight">Canales de comunicación abiertos:</span></code></pre>
+                    <div class="contact-actions mt-2">
+                        <a href="mailto:benjallancao@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i>
+                            Enviar Correo</a>
+                        <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank" class="btn-secondary"><i
+                                class="fab fa-linkedin"></i> Conectar en LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Console Footer -->
+    <footer class="console-footer">
+        <div class="ping-status">CONEXIÓN SEGURA // Fin del sistema.</div>
+        <div class="contact-array">
+            <a href="mailto:benjallancao@gmail.com">[ CORREO ]</a>
+            <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank">[ LINKEDIN ]</a>
+            <a href="https://github.com/benllame" target="_blank">[ GITHUB ]</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
