@@ -161,8 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // html lang attribute
         document.documentElement.lang = lang;
 
-        // Toggle button label shows the OTHER language (what you'd switch to)
+        // Toggle button labels show the OTHER language (what you'd switch to)
         document.getElementById('lang-label').textContent = lang === 'es' ? 'EN' : 'ES';
+        const mobileLangLabel = document.getElementById('lang-label-mobile');
+        if (mobileLangLabel) mobileLangLabel.textContent = lang === 'es' ? 'EN' : 'ES';
 
         currentLang = lang;
         localStorage.setItem('lang', lang);
@@ -211,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(renderNextLine, 500);
 
     // ─────────────────────────────────────────────────────────
-    // 4. Language Toggle Button
+    // 4. Language Toggle Buttons (desktop + mobile)
     // ─────────────────────────────────────────────────────────
-    document.getElementById('lang-toggle').addEventListener('click', () => {
+    function handleLangToggle() {
         const newLang = currentLang === 'es' ? 'en' : 'es';
         applyLang(newLang);
 
@@ -227,7 +229,46 @@ document.addEventListener('DOMContentLoaded', () => {
             `<span class="prompt">$</span> grep -i &quot;focus&quot; sys_profile.yaml<br>` +
             `<span class="output" data-i18n="hero.focus">${t['hero.focus']}</span><br>` +
             `<span class="prompt blink">_</span><br>`;
-    });
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', handleLangToggle);
+    const mobileLangToggle = document.getElementById('lang-toggle-mobile');
+    if (mobileLangToggle) mobileLangToggle.addEventListener('click', handleLangToggle);
+
+    // ─────────────────────────────────────────────────────────
+    // Hamburger Menu Toggle
+    // ─────────────────────────────────────────────────────────
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    function closeMobileNav() {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('open');
+    }
+
+    if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileNav.classList.toggle('open');
+        });
+
+        // Close when a nav link is clicked
+        mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileNav);
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                closeMobileNav();
+            }
+        });
+
+        // Close on desktop resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMobileNav();
+        });
+    }
 
     // ─────────────────────────────────────────────────────────
     // 5. Tab Navigation State
