@@ -190,6 +190,7 @@ body {
     color: var(--accent-alt);
     margin-right: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .lang-btn:hover {
