@@ -22,6 +22,8 @@
     /* Cyber Blue */
     --accent-alert: #fb7185;
     /* Error Red */
+    --accent-rag: #a78bfa;
+    /* RAG Violet */
 
     --border-main: #1e293b;
     --border-bright: #334155;
@@ -237,6 +239,14 @@ body {
     color: var(--accent-alert);
 }
 
+.module-header.alternate-3::before {
+    background: var(--accent-rag);
+}
+
+.module-header.alternate-3 h2 .index {
+    color: var(--accent-rag);
+}
+
 .module-badges {
     display: flex;
     gap: 0.5rem;
@@ -255,6 +265,12 @@ body {
     border-color: var(--accent-alert);
     color: var(--accent-alert);
     background: rgba(251, 113, 133, 0.1);
+}
+
+.tech-badge.rag-color {
+    border-color: var(--accent-rag);
+    color: var(--accent-rag);
+    background: rgba(167, 139, 250, 0.1);
 }
 
 .module-header h2 {
@@ -816,6 +832,149 @@ pre {
     font-size: 1rem;
     color: var(--text-primary);
     margin-top: 5px;
+}
+
+/* RAG Pipeline Interface */
+.rag-interface {
+    border: 1px solid var(--border-bright);
+    background: var(--bg-panel);
+    border-left: 3px solid var(--accent-rag);
+}
+
+.rag-interface .interface-header {
+    color: var(--accent-rag);
+}
+
+.rag-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.rag-query {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border-main);
+    padding: 0.8rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.rag-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-rag);
+    border: 1px solid var(--accent-rag);
+    padding: 2px 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.rag-text {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.rag-pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg-terminal);
+    border: 1px solid var(--border-main);
+    overflow: hidden;
+}
+
+.rag-step {
+    flex: 1;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    border-right: 1px solid var(--border-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.rag-step:last-child {
+    border-right: none;
+}
+
+.rag-step.active {
+    border-top: 2px solid var(--accent-rag);
+}
+
+.rag-step.rerank-step {
+    border-top: 2px solid var(--accent-main);
+    background: rgba(52, 211, 153, 0.05);
+}
+
+.step-num {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+}
+
+.step-name {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.rag-step small {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.rag-arrow {
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    padding: 0 0.3rem;
+    font-size: 0.8rem;
+    background: var(--bg-terminal);
+}
+
+.rag-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.rag-metric {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border-main);
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.metric-lbl {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.metric-val {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.metric-val.rag-highlight {
+    color: var(--accent-rag);
+}
+
+.rag-delta {
+    font-size: 0.65rem;
+    color: var(--accent-main);
+    font-family: var(--font-mono);
 }
 
 /* Console Footer */

@@ -68,7 +68,7 @@
                         <span class="prompt">$</span> grep -i "focus" sys_profile.yaml<br>
                         <span class="output">Construyendo sistemas de IA end-to-end. Experiencia en soluciones
                             multimodales (Computer
-                            Vision, NLP) y despliegue a infraestructura cloud production-grade. Enfoque transversal en
+                            Vision, NLP, LLMs/RAG) y despliegue a infraestructura cloud production-grade. Enfoque transversal en
                             MLOps, CI/CD y
                             observabilidad de modelos.</span><br>
                         <span class="prompt blink">_</span>
@@ -105,9 +105,111 @@
 
         <!-- SECTION 1: Projects -->
         <div id="projects"> <!-- Anchor wrapper for both projects -->
+            <!-- SECTION 1A: RAG Financial -->
+            <section class="module mt-10">
+                <div class="module-header alternate-3">
+                    <h2><span class="index">01.a</span> > nlp.rag_financiero</h2>
+                    <div class="module-badges">
+                        <span class="tech-badge rag-color">Gemini 2.5</span>
+                        <span class="tech-badge rag-color">ChromaDB</span>
+                        <span class="tech-badge rag-color">RAGAS</span>
+                        <span class="tech-badge rag-color">Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="module-content architecture-layout">
+                    <div class="text-panel">
+                        <h3 class="sys-title">RAG Financiero — Memorias NCG 461</h3>
+                        <p class="sys-desc">
+                            Sistema RAG para consultar en lenguaje natural las Memorias Anuales Integradas de empresas
+                            del IPSA chileno. Implementa y evalúa cuatro configuraciones comparables con métricas RAGAS
+                            sobre 34 preguntas con ground truth manual.
+                        </p>
+
+                        <ul class="specs-list">
+                            <li><i class="fas fa-angle-right"></i> <strong>Extracción:</strong> MarkItDown (PDF →
+                                Markdown) + LangExtract para entidades estructuradas ASG/financieras con source
+                                grounding.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Retrieval:</strong> gemini-embedding-001
+                                (768d MRL) con task_type dual; ChromaDB con filtros de metadatos por empresa y año.
+                            </li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Reranking:</strong> Batch scoring LLM con
+                                Gemini 2.5 Flash en una sola llamada → <strong>+0.414</strong> Answer Relevancy vs
+                                baseline similarity.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong>Evaluación:</strong> Pipeline RAGAS
+                                reproducible: Faithfulness, Answer Relevancy, Context Precision y Context Recall.</li>
+                        </ul>
+
+                        <a href="#" target="_blank" class="action-btn">
+                            [ REPO ]
+                        </a>
+                    </div>
+
+                    <div class="diagram-panel fade-in-right">
+                        <div class="rag-interface">
+                            <div class="interface-header">rag_chain.py — Simple + Reranking (configuración óptima)</div>
+                            <div class="rag-body">
+                                <div class="rag-query">
+                                    <span class="rag-label">QUERY</span>
+                                    <span class="rag-text">¿Cuál es el ROE del Banco de Chile en 2023?</span>
+                                </div>
+                                <div class="rag-pipeline">
+                                    <div class="rag-step active">
+                                        <span class="step-num">01</span>
+                                        <span class="step-name">Embed</span>
+                                        <small>gemini-embed-001</small>
+                                    </div>
+                                    <span class="rag-arrow">›</span>
+                                    <div class="rag-step">
+                                        <span class="step-num">02</span>
+                                        <span class="step-name">Retrieve</span>
+                                        <small>ChromaDB K=20</small>
+                                    </div>
+                                    <span class="rag-arrow">›</span>
+                                    <div class="rag-step rerank-step">
+                                        <span class="step-num">03</span>
+                                        <span class="step-name">Rerank</span>
+                                        <small>Gemini batch</small>
+                                    </div>
+                                    <span class="rag-arrow">›</span>
+                                    <div class="rag-step">
+                                        <span class="step-num">04</span>
+                                        <span class="step-name">Generate</span>
+                                        <small>top-5 chunks</small>
+                                    </div>
+                                </div>
+                                <div class="rag-metrics">
+                                    <div class="rag-metric">
+                                        <span class="metric-lbl">FAITHFULNESS</span>
+                                        <span class="metric-val">0.891</span>
+                                        <span class="rag-delta">+0.022</span>
+                                    </div>
+                                    <div class="rag-metric">
+                                        <span class="metric-lbl">ANS. RELEVANCY</span>
+                                        <span class="metric-val rag-highlight">0.906</span>
+                                        <span class="rag-delta">+0.414</span>
+                                    </div>
+                                    <div class="rag-metric">
+                                        <span class="metric-lbl">CTX. PRECISION</span>
+                                        <span class="metric-val rag-highlight">0.716</span>
+                                        <span class="rag-delta">+0.238</span>
+                                    </div>
+                                    <div class="rag-metric">
+                                        <span class="metric-lbl">CTX. RECALL</span>
+                                        <span class="metric-val rag-highlight">0.795</span>
+                                        <span class="rag-delta">+0.498</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1B: Data Engineering -->
             <section class="module mt-10">
                 <div class="module-header alternate">
-                    <h2><span class="index">01.a</span> > infraestructura.data_engineering</h2>
+                    <h2><span class="index">01.b</span> > infraestructura.data_engineering</h2>
                     <div class="module-badges">
                         <span class="tech-badge">GCP Dataflow</span>
                         <span class="tech-badge">Apache Airflow</span>
@@ -176,10 +278,10 @@ dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
                 </div>
             </section>
 
-            <!-- SECTION 1B: Anomaly Detection / Vision -->
+            <!-- SECTION 1C: Anomaly Detection / Vision -->
             <section class="module mt-10">
                 <div class="module-header alternate-2">
-                    <h2><span class="index">01.b</span> > modelos.computer_vision</h2>
+                    <h2><span class="index">01.c</span> > modelos.computer_vision</h2>
                     <div class="module-badges">
                         <span class="tech-badge anomaly-color">DINOv2 ViT</span>
                         <span class="tech-badge anomaly-color">ONNX</span>
@@ -270,7 +372,12 @@ dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
                     <div class="tech-card">
                         <div class="card-icon"><i class="fas fa-brain"></i></div>
                         <h3>ML Frameworks</h3>
-                        <p>PyTorch, TensorFlow, scikit-learn, HuggingFace Transformers, ONNX Runtime</p>
+                        <p>PyTorch, TensorFlow, scikit-learn, HuggingFace Transformers, ONNX Runtime, YOLOv12</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="card-icon"><i class="fas fa-comments"></i></div>
+                        <h3>LLMs & RAG</h3>
+                        <p>Gemini API, ChromaDB, LangExtract, RAGAS, Streamlit, MarkItDown</p>
                     </div>
                     <div class="tech-card">
                         <div class="card-icon"><i class="fas fa-database"></i></div>
