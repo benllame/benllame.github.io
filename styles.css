@@ -834,6 +834,122 @@ pre {
     margin-top: 5px;
 }
 
+/* RAG Tech Tags */
+.rag-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.rag-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--border-bright);
+    color: var(--text-muted);
+    background: var(--bg-terminal);
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+}
+
+.rag-tag.primary {
+    border-color: var(--accent-rag);
+    color: var(--accent-rag);
+    background: rgba(167, 139, 250, 0.08);
+    font-weight: 600;
+}
+
+/* Vertical pipeline */
+.rag-pipeline-v {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg-terminal);
+    border: 1px solid var(--border-main);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.rag-row {
+    display: flex;
+}
+
+.rag-node {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.75rem 0.8rem;
+    border-right: 1px solid var(--border-main);
+    border-bottom: 1px solid var(--border-main);
+    position: relative;
+}
+
+.rag-node:last-child {
+    border-right: none;
+}
+
+.rag-node.index-node { border-top: 2px solid var(--accent-alt); }
+.rag-node.embed-node  { border-top: 2px solid var(--accent-alt); }
+.rag-node.store-node  { border-top: 2px solid var(--accent-alt); }
+.rag-node.rerank-node { border-top: 2px solid var(--accent-main); background: rgba(52, 211, 153, 0.04); flex: 1.4; }
+.rag-node.gen-node    { border-top: 2px solid var(--accent-rag); }
+
+.rn-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.index-node .rn-icon, .embed-node .rn-icon, .store-node .rn-icon { color: var(--accent-alt); }
+.rerank-node .rn-icon { color: var(--accent-main); }
+.gen-node .rn-icon    { color: var(--accent-rag); }
+
+.rn-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.rn-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.rn-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rn-badge {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--accent-main);
+    border: 1px solid var(--accent-main);
+    padding: 1px 5px;
+    background: rgba(52, 211, 153, 0.08);
+}
+
+.rag-vconnector {
+    text-align: center;
+    padding: 0.3rem;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-main);
+}
+
 /* RAG Pipeline Interface */
 .rag-interface {
     border: 1px solid var(--border-bright);

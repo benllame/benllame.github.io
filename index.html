@@ -58,11 +58,11 @@
                 <div class="terminal-window">
                     <div class="terminal-toolbar">
                         <span class="btn close"></span><span class="btn min"></span><span class="btn max"></span>
-                        <span class="title">bash - ssh llancao@production</span>
+                        <span class="title">bash - ssh bllancao@production</span>
                     </div>
                     <div class="terminal-body" id="hero-typewriter">
                         <span class="prompt">$</span> whoami<br>
-                        <span class="output highlight">Benjamín Llancao</span><br>
+                        <span class="output highlight">Benjamín Llancao Mella</span><br>
                         <span class="prompt">$</span> cat role.txt<br>
                         <span class="output">Data Scientist & Machine Learning Engineer</span><br>
                         <span class="prompt">$</span> grep -i "focus" sys_profile.yaml<br>
@@ -94,7 +94,7 @@
 
                         <div class="contact-actions mt-2">
                             <a href="mailto:benjallancao@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i>
-                                benjallancao@gmail.com</a>
+                                Enviar Correo</a>
                             <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank"
                                 class="btn-secondary"><i class="fab fa-linkedin"></i> Conectar en LinkedIn</a>
                         </div>
@@ -147,59 +147,98 @@
 
                     <div class="diagram-panel fade-in-right">
                         <div class="rag-interface">
-                            <div class="interface-header">rag_chain.py — Simple + Reranking (configuración óptima)</div>
+                            <div class="interface-header"><i class="fas fa-robot"></i> rag_chain.py — pipeline completo</div>
                             <div class="rag-body">
+
+                                <!-- Tech keyword tags -->
+                                <div class="rag-tags">
+                                    <span class="rag-tag primary">RAG</span>
+                                    <span class="rag-tag primary">LLM</span>
+                                    <span class="rag-tag primary">GenAI</span>
+                                    <span class="rag-tag">Embeddings</span>
+                                    <span class="rag-tag">Vector DB</span>
+                                    <span class="rag-tag">Reranking</span>
+                                    <span class="rag-tag">RAGAS</span>
+                                    <span class="rag-tag">Gemini 2.5</span>
+                                    <span class="rag-tag">ChromaDB</span>
+                                    <span class="rag-tag">ASG/ESG</span>
+                                </div>
+
+                                <!-- Query input -->
                                 <div class="rag-query">
-                                    <span class="rag-label">QUERY</span>
+                                    <span class="rag-label">USER QUERY</span>
                                     <span class="rag-text">¿Cuál es el ROE del Banco de Chile en 2023?</span>
                                 </div>
-                                <div class="rag-pipeline">
-                                    <div class="rag-step active">
-                                        <span class="step-num">01</span>
-                                        <span class="step-name">Embed</span>
-                                        <small>gemini-embed-001</small>
+
+                                <!-- Vertical pipeline -->
+                                <div class="rag-pipeline-v">
+                                    <div class="rag-row">
+                                        <div class="rag-node index-node">
+                                            <div class="rn-icon"><i class="fas fa-file-pdf"></i></div>
+                                            <div class="rn-info">
+                                                <span class="rn-title">INGEST</span>
+                                                <span class="rn-sub">PDF → MarkItDown → chunks</span>
+                                            </div>
+                                        </div>
+                                        <div class="rag-node embed-node">
+                                            <div class="rn-icon"><i class="fas fa-vector-square"></i></div>
+                                            <div class="rn-info">
+                                                <span class="rn-title">EMBED</span>
+                                                <span class="rn-sub">gemini-embedding-001 · 768d</span>
+                                            </div>
+                                        </div>
+                                        <div class="rag-node store-node">
+                                            <div class="rn-icon"><i class="fas fa-database"></i></div>
+                                            <div class="rn-info">
+                                                <span class="rn-title">VECTOR STORE</span>
+                                                <span class="rn-sub">ChromaDB · K=20</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <span class="rag-arrow">›</span>
-                                    <div class="rag-step">
-                                        <span class="step-num">02</span>
-                                        <span class="step-name">Retrieve</span>
-                                        <small>ChromaDB K=20</small>
-                                    </div>
-                                    <span class="rag-arrow">›</span>
-                                    <div class="rag-step rerank-step">
-                                        <span class="step-num">03</span>
-                                        <span class="step-name">Rerank</span>
-                                        <small>Gemini batch</small>
-                                    </div>
-                                    <span class="rag-arrow">›</span>
-                                    <div class="rag-step">
-                                        <span class="step-num">04</span>
-                                        <span class="step-name">Generate</span>
-                                        <small>top-5 chunks</small>
+                                    <div class="rag-vconnector"><i class="fas fa-arrow-down"></i></div>
+                                    <div class="rag-row">
+                                        <div class="rag-node rerank-node">
+                                            <div class="rn-icon"><i class="fas fa-sort-amount-down"></i></div>
+                                            <div class="rn-info">
+                                                <span class="rn-title">LLM RERANK</span>
+                                                <span class="rn-sub">Gemini 2.5 Flash · batch scoring</span>
+                                            </div>
+                                            <span class="rn-badge">+0.414 relevancy</span>
+                                        </div>
+                                        <div class="rag-node gen-node">
+                                            <div class="rn-icon"><i class="fas fa-comments"></i></div>
+                                            <div class="rn-info">
+                                                <span class="rn-title">GENERATE</span>
+                                                <span class="rn-sub">Gemini 2.5 Flash · top-5 ctx</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <!-- RAGAS metrics -->
                                 <div class="rag-metrics">
                                     <div class="rag-metric">
                                         <span class="metric-lbl">FAITHFULNESS</span>
                                         <span class="metric-val">0.891</span>
-                                        <span class="rag-delta">+0.022</span>
+                                        <span class="rag-delta">↑ +0.022</span>
                                     </div>
                                     <div class="rag-metric">
                                         <span class="metric-lbl">ANS. RELEVANCY</span>
                                         <span class="metric-val rag-highlight">0.906</span>
-                                        <span class="rag-delta">+0.414</span>
+                                        <span class="rag-delta">↑ +0.414</span>
                                     </div>
                                     <div class="rag-metric">
                                         <span class="metric-lbl">CTX. PRECISION</span>
                                         <span class="metric-val rag-highlight">0.716</span>
-                                        <span class="rag-delta">+0.238</span>
+                                        <span class="rag-delta">↑ +0.238</span>
                                     </div>
                                     <div class="rag-metric">
                                         <span class="metric-lbl">CTX. RECALL</span>
                                         <span class="metric-val rag-highlight">0.795</span>
-                                        <span class="rag-delta">+0.498</span>
+                                        <span class="rag-delta">↑ +0.498</span>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
