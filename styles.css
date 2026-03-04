@@ -185,6 +185,18 @@ body {
     color: #000;
 }
 
+.lang-btn {
+    border-color: var(--accent-alt);
+    color: var(--accent-alt);
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.lang-btn:hover {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-alt);
+}
+
 /* Main Content Layout */
 .system-view {
     max-width: 1200px;

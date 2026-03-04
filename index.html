@@ -23,7 +23,7 @@
     <!-- Telemetry Overlay -->
     <div class="telemetry-bar">
         <span class="telemetry-item" id="sys-time">SYS_TIME: 00:00:00</span>
-        <span class="telemetry-item">STATUS: <span class="status-ok">DISPONIBLE</span></span>
+        <span class="telemetry-item">STATUS: <span class="status-ok" data-i18n="telemetry.status">DISPONIBLE</span></span>
         <span class="telemetry-item">LATENCY: <span id="ping-sim">12</span>ms</span>
         <span class="telemetry-item">USER_IP: 127.0.0.1</span>
     </div>
@@ -34,12 +34,15 @@
             <span class="prompt">~ $</span> ./bllancao.sh
         </div>
         <div class="tabs-container">
-            <a href="#init" class="tab active">[0] INICIO</a>
-            <a href="#projects" class="tab">[1] PROYECTOS</a>
-            <a href="#stack" class="tab">[2] STACK</a>
-            <a href="#contact" class="tab">[3] CONTACTO</a>
+            <a href="#init" class="tab active" data-i18n="nav.home">[0] INICIO</a>
+            <a href="#projects" class="tab" data-i18n="nav.projects">[1] PROYECTOS</a>
+            <a href="#stack" class="tab" data-i18n="nav.stack">[2] STACK</a>
+            <a href="#contact" class="tab" data-i18n="nav.contact">[3] CONTACTO</a>
         </div>
         <div class="nav-actions">
+            <button id="lang-toggle" class="nav-btn lang-btn" aria-label="Switch language">
+                <i class="fas fa-globe"></i> <span id="lang-label">EN</span>
+            </button>
             <a href="https://github.com/benllame" target="_blank" class="nav-btn"><i class="fab fa-github"></i> <span
                     class="repo-text">REPO</span></a>
         </div>
@@ -64,39 +67,31 @@
                         <span class="prompt">$</span> whoami<br>
                         <span class="output highlight">Benjamín Llancao Mella</span><br>
                         <span class="prompt">$</span> cat role.txt<br>
-                        <span class="output">Data Scientist & Machine Learning Engineer</span><br>
+                        <span class="output" data-i18n="hero.role">Data Scientist & Machine Learning Engineer</span><br>
                         <span class="prompt">$</span> grep -i "focus" sys_profile.yaml<br>
-                        <span class="output">Construyendo sistemas de IA end-to-end. Experiencia en soluciones
-                            multimodales (Computer
-                            Vision, NLP, LLMs/RAG) y despliegue a infraestructura cloud production-grade. Enfoque transversal en
-                            MLOps, CI/CD y
-                            observabilidad de modelos.</span><br>
+                        <span class="output" data-i18n="hero.focus">Construyendo sistemas de IA end-to-end. Experiencia en soluciones multimodales (Computer Vision, NLP, LLMs/RAG) y despliegue a infraestructura cloud production-grade. Enfoque transversal en MLOps, CI/CD y observabilidad de modelos.</span><br>
                         <span class="prompt blink">_</span>
                     </div>
                 </div>
 
                 <div class="profile-summary-box fade-in-up">
-                    <div class="vis-header">resumen.perfil & contacto</div>
+                    <div class="vis-header" data-i18n="profile.header">resumen.perfil & contacto</div>
                     <div class="summary-content">
                         <ul class="clean-list">
-                            <li><i class="fas fa-check"></i> <strong>Sistemas ML End-to-end:</strong> Del prototipo a
-                                producción.</li>
-                            <li><i class="fas fa-check"></i> <strong>Data Pipelines:</strong> Escalables, robustos y
-                                cloud-native.</li>
-                            <li><i class="fas fa-check"></i> <strong>MLOps & CI/CD:</strong> Operación continua y
-                                observabilidad.</li>
+                            <li><i class="fas fa-check"></i> <strong data-i18n="profile.li1.strong">Sistemas ML End-to-end:</strong> <span data-i18n="profile.li1.text">Del prototipo a producción.</span></li>
+                            <li><i class="fas fa-check"></i> <strong data-i18n="profile.li2.strong">Data Pipelines:</strong> <span data-i18n="profile.li2.text">Escalables, robustos y cloud-native.</span></li>
+                            <li><i class="fas fa-check"></i> <strong data-i18n="profile.li3.strong">MLOps & CI/CD:</strong> <span data-i18n="profile.li3.text">Operación continua y observabilidad.</span></li>
                         </ul>
 
                         <div class="highlight-contact mt-2">
-                            <span class="label">STATUS:</span> <span class="value success">Disponible para
-                                Contratación</span>
+                            <span class="label">STATUS:</span> <span class="value success" data-i18n="profile.status">Disponible para Contratación</span>
                         </div>
 
                         <div class="contact-actions mt-2">
                             <a href="mailto:benjallancao@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i>
-                                Enviar Correo</a>
+                                <span data-i18n="profile.email">Enviar Correo</span></a>
                             <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank"
-                                class="btn-secondary"><i class="fab fa-linkedin"></i> Conectar en LinkedIn</a>
+                                class="btn-secondary"><i class="fab fa-linkedin"></i> <span data-i18n="profile.linkedin">Conectar en LinkedIn</span></a>
                         </div>
                     </div>
                 </div>
@@ -122,25 +117,14 @@
 
                 <div class="module-content architecture-layout">
                     <div class="text-panel">
-                        <h3 class="sys-title">RAG Financiero — Memorias NCG 461</h3>
-                        <p class="sys-desc">
-                            Sistema RAG para consultar en lenguaje natural las Memorias Anuales Integradas de empresas
-                            del IPSA chileno. Implementa y evalúa cuatro configuraciones comparables con métricas RAGAS
-                            sobre 34 preguntas con ground truth manual.
-                        </p>
+                        <h3 class="sys-title" data-i18n="rag.title">RAG Financiero — Memorias NCG 461</h3>
+                        <p class="sys-desc" data-i18n="rag.desc">Sistema RAG para consultar en lenguaje natural las Memorias Anuales Integradas de empresas del IPSA chileno. Implementa y evalúa cuatro configuraciones comparables con métricas RAGAS sobre 34 preguntas con ground truth manual.</p>
 
                         <ul class="specs-list">
-                            <li><i class="fas fa-angle-right"></i> <strong>Extracción:</strong> MarkItDown (PDF →
-                                Markdown) + LangExtract para entidades estructuradas ASG/financieras con source
-                                grounding.</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Retrieval:</strong> gemini-embedding-001
-                                (768d MRL) con task_type dual; ChromaDB con filtros de metadatos por empresa y año.
-                            </li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Reranking:</strong> Batch scoring LLM con
-                                Gemini 2.5 Flash en una sola llamada → <strong>+0.414</strong> Answer Relevancy vs
-                                baseline similarity.</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Evaluación:</strong> Pipeline RAGAS
-                                reproducible: Faithfulness, Answer Relevancy, Context Precision y Context Recall.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="rag.li1.strong">Extracción:</strong> <span data-i18n="rag.li1.text">MarkItDown (PDF → Markdown) + LangExtract para entidades estructuradas ASG/financieras con source grounding.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="rag.li2.strong">Retrieval:</strong> <span data-i18n="rag.li2.text">gemini-embedding-001 (768d MRL) con task_type dual; ChromaDB con filtros de metadatos por empresa y año.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="rag.li3.strong">Reranking:</strong> <span data-i18n="rag.li3.text">Batch scoring LLM con Gemini 2.5 Flash en una sola llamada → <strong>+0.414</strong> Answer Relevancy vs baseline similarity.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="rag.li4.strong">Evaluación:</strong> <span data-i18n="rag.li4.text">Pipeline RAGAS reproducible: Faithfulness, Answer Relevancy, Context Precision y Context Recall.</span></li>
                         </ul>
 
                         <a href="#" target="_blank" class="action-btn">
@@ -150,13 +134,13 @@
 
                     <div class="diagram-panel fade-in-right">
                         <div class="rag-interface">
-                            <div class="interface-header"><i class="fas fa-robot"></i> rag_chain.py — pipeline completo</div>
+                            <div class="interface-header"><i class="fas fa-robot"></i> rag_chain.py — <span data-i18n="rag.diagram.header">pipeline completo</span></div>
                             <div class="rag-body">
 
                                 <!-- Query input -->
                                 <div class="rag-query">
                                     <span class="rag-label">USER QUERY</span>
-                                    <span class="rag-text">¿Cuál es el ROE del Banco de Chile en 2023?</span>
+                                    <span class="rag-text" data-i18n="rag.query">¿Cuál es el ROE del Banco de Chile en 2023?</span>
                                 </div>
 
                                 <!-- Vertical pipeline -->
@@ -247,21 +231,14 @@
 
                 <div class="module-content architecture-layout">
                     <div class="text-panel">
-                        <h3 class="sys-title">Plataforma Datos E-Commerce OLIST</h3>
-                        <p class="sys-desc">
-                            Arquitectura ETL/ELT production-grade que procesa datos transaccionales reales.
-                            Diseñado para escalabilidad y alta disponibilidad utilizando servicios de Google Cloud.
-                        </p>
+                        <h3 class="sys-title" data-i18n="olist.title">Plataforma Datos E-Commerce OLIST</h3>
+                        <p class="sys-desc" data-i18n="olist.desc">Arquitectura ETL/ELT production-grade que procesa datos transaccionales reales. Diseñado para escalabilidad y alta disponibilidad utilizando servicios de Google Cloud.</p>
 
                         <ul class="specs-list">
-                            <li><i class="fas fa-angle-right"></i> <strong>Orquestación:</strong> DAGs de Apache Airflow
-                                manejando dependencias complejas y SLAs.</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Procesamiento:</strong> Transformaciones
-                                distribuidas tanto *Batch* como *Streaming* en GCP Dataflow (Apache Beam).</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Warehouse:</strong> Tablas analíticas en
-                                BigQuery con particionamiento y clustering para queries optimizadas.</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>IaC:</strong> 28 recursos desplegados
-                                automáticamente bajo control de versiones mediante Terraform.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="olist.li1.strong">Orquestación:</strong> <span data-i18n="olist.li1.text">DAGs de Apache Airflow manejando dependencias complejas y SLAs.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="olist.li2.strong">Procesamiento:</strong> <span data-i18n="olist.li2.text">Transformaciones distribuidas tanto Batch como Streaming en GCP Dataflow (Apache Beam).</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="olist.li3.strong">Warehouse:</strong> <span data-i18n="olist.li3.text">Tablas analíticas en BigQuery con particionamiento y clustering para queries optimizadas.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="olist.li4.strong">IaC:</strong> <span data-i18n="olist.li4.text">28 recursos desplegados automáticamente bajo control de versiones mediante Terraform.</span></li>
                         </ul>
 
                         <a href="https://github.com/benllame/Olist-E-Commerce-Data-Platform" target="_blank"
@@ -273,11 +250,11 @@
                     <div class="diagram-panel fade-in-right">
                         <!-- CSS Architecture Diagram -->
                         <div class="arch-flow">
-                            <div class="node source">GCS / PubSub<br><small>(Ingesta)</small></div>
+                            <div class="node source">GCS / PubSub<br><small data-i18n="olist.node.source">(Ingesta)</small></div>
                             <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
 
                             <div class="node orchestration">
-                                AIRFLOW<br><small>(Orquestación)</small>
+                                AIRFLOW<br><small data-i18n="olist.node.airflow">(Orquestación)</small>
                                 <div class="status-dot pulsing"></div>
                             </div>
 
@@ -364,22 +341,14 @@ dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
                     </div>
 
                     <div class="text-panel">
-                        <h3 class="sys-title">Detección de Anomalías Industriales</h3>
-                        <p class="sys-desc">
-                            Sistema de localización de defectos a nivel píxel utilizando features del modelo fundacional
-                            de Meta (DINOv2)
-                            y k-NN. Reescrito sin dependencia directa a PyTorch para un despliegue optimizado.
-                        </p>
+                        <h3 class="sys-title" data-i18n="cv.title">Detección de Anomalías Industriales</h3>
+                        <p class="sys-desc" data-i18n="cv.desc">Sistema de localización de defectos a nivel píxel utilizando features del modelo fundacional de Meta (DINOv2) y k-NN. Reescrito sin dependencia directa a PyTorch para un despliegue optimizado.</p>
 
                         <ul class="specs-list">
-                            <li><i class="fas fa-angle-right"></i> <strong>Modelo:</strong> Extracción profunda de
-                                features usando DINOv2.</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Despliegue:</strong> Empaquetado vía ONNX
-                                Runtime y envuelto en endpoints HTTP altamente paralelizables con FastAPI.</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>Observabilidad:</strong> Monitoreado en
-                                tiempo real con Prometheus y Grafana (latencia del endpoint, tamaño del pool).</li>
-                            <li><i class="fas fa-angle-right"></i> <strong>CI/CD:</strong> Testing y validación
-                                automatizada mediante pipelines en GitHub Actions.</li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="cv.li1.strong">Modelo:</strong> <span data-i18n="cv.li1.text">Extracción profunda de features usando DINOv2.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="cv.li2.strong">Despliegue:</strong> <span data-i18n="cv.li2.text">Empaquetado vía ONNX Runtime y envuelto en endpoints HTTP altamente paralelizables con FastAPI.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="cv.li3.strong">Observabilidad:</strong> <span data-i18n="cv.li3.text">Monitoreado en tiempo real con Prometheus y Grafana (latencia del endpoint, tamaño del pool).</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="cv.li4.strong">CI/CD:</strong> <span data-i18n="cv.li4.text">Testing y validación automatizada mediante pipelines en GitHub Actions.</span></li>
                         </ul>
 
                         <a href="https://github.com/benllame/Anomaly-Detector" target="_blank" class="action-btn">
@@ -409,7 +378,7 @@ dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
                     </div>
                     <div class="tech-card">
                         <div class="card-icon"><i class="fas fa-database"></i></div>
-                        <h3>Ingeniería de Datos</h3>
+                        <h3 data-i18n="stack.data.title">Ingeniería de Datos</h3>
                         <p>Apache Airflow, Apache Beam, Google BigQuery, Pandas</p>
                     </div>
                     <div class="tech-card">
@@ -419,7 +388,7 @@ dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
                     </div>
                     <div class="tech-card">
                         <div class="card-icon"><i class="fas fa-code"></i></div>
-                        <h3>Backend & Bases de Datos</h3>
+                        <h3 data-i18n="stack.backend.title">Backend & Bases de Datos</h3>
                         <p>Python, FastAPI, SQL Server, MySQL, MongoDB, Redis</p>
                     </div>
                 </div>
@@ -446,9 +415,9 @@ PING benjallancao@gmail.com: 56 data bytes
 <span class="output highlight">Canales de comunicación abiertos:</span></code></pre>
                     <div class="contact-actions mt-2">
                         <a href="mailto:benjallancao@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i>
-                            Enviar Correo</a>
+                            <span data-i18n="contact.email">Enviar Correo</span></a>
                         <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank" class="btn-secondary"><i
-                                class="fab fa-linkedin"></i> Conectar en LinkedIn</a>
+                                class="fab fa-linkedin"></i> <span data-i18n="contact.linkedin">Conectar en LinkedIn</span></a>
                     </div>
                 </div>
             </div>
@@ -458,9 +427,9 @@ PING benjallancao@gmail.com: 56 data bytes
 
     <!-- Console Footer -->
     <footer class="console-footer">
-        <div class="ping-status">CONEXIÓN SEGURA // Fin del sistema.</div>
+        <div class="ping-status" data-i18n="footer.status">CONEXIÓN SEGURA // Fin del sistema.</div>
         <div class="contact-array">
-            <a href="mailto:benjallancao@gmail.com">[ CORREO ]</a>
+            <a href="mailto:benjallancao@gmail.com" data-i18n="footer.email">[ CORREO ]</a>
             <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank">[ LINKEDIN ]</a>
             <a href="https://github.com/benllame" target="_blank">[ GITHUB ]</a>
         </div>
