@@ -119,10 +119,74 @@
 
         <!-- SECTION 1: Projects -->
         <div id="projects"> <!-- Anchor wrapper for both projects -->
-            <!-- SECTION 1A: RAG Financial -->
+            <!-- SECTION 1A: Churn Intelligence System -->
+            <section class="module mt-10">
+                <div class="module-header">
+                    <h2><span class="index">01.a</span> > ml.churn_intelligence</h2>
+                    <div class="module-badges">
+                        <span class="tech-badge" style="font-weight:700">Classical ML</span>
+                        <span class="tech-badge" style="font-weight:700">LangGraph</span>
+                        <span class="tech-badge" style="font-weight:700">ReAct Agent</span>
+                        <span class="tech-badge">CatBoost</span>
+                        <span class="tech-badge">SHAP</span>
+                        <span class="tech-badge">MLflow</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="module-content architecture-layout">
+                    <div class="text-panel">
+                        <h3 class="sys-title" data-i18n="churn.title">Churn Intelligence System v3</h3>
+                        <p class="sys-desc" data-i18n="churn.desc">Sistema end-to-end que predice churn de clientes Telco, explica cada predicción con SHAP, optimiza presupuesto de retención por ROI y expone todo a través de un agente conversacional ReAct con Gemini. El mejor modelo (CatBoost, 54 features) alcanza ROC-AUC 0.847 en 10 ejecuciones.</p>
+
+                        <ul class="specs-list">
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="churn.li1.strong">ML Pipeline:</strong> <span data-i18n="churn.li1.text">4 modelos (RF, XGBoost, CatBoost, MLP) × 3 feature sets × 10 seeds con threshold óptimo por F1-OOF; tracking completo en MLflow.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="churn.li2.strong">Explicabilidad:</strong> <span data-i18n="churn.li2.text">SHAP TreeExplainer con waterfall plots por cliente; selección de features via Mutual Information y Hill Climbing (10 features → 98% del AUC).</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="churn.li3.strong">Policy Engine:</strong> <span data-i18n="churn.li3.text">Optimizador ROI con 3 estrategias de retención (descuento, llamada, upgrade); asignación greedy de presupuesto por ROI esperado.</span></li>
+                            <li><i class="fas fa-angle-right"></i> <strong data-i18n="churn.li4.strong">Serving:</strong> <span data-i18n="churn.li4.text">Agente ReAct (LangGraph + Gemini) con 5 tools; FastAPI REST + Streamlit UI; Evidently AI para drift monitoring y retrain automático.</span></li>
+                        </ul>
+
+                        <a href="https://github.com/benllame/classical_ml_and_agents" target="_blank" class="action-btn">
+                            [ REPO ]
+                        </a>
+                    </div>
+
+                    <div class="diagram-panel fade-in-right">
+                        <div class="arch-flow">
+                            <div class="node source">CSV Data<br><small>(Telco Churn)</small></div>
+                            <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
+                            <div class="node orchestration">
+                                ML PIPELINE<br><small>RF · XGB · CatBoost · MLP</small>
+                                <div class="status-dot pulsing"></div>
+                            </div>
+                            <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
+                            <div class="node processing">
+                                BEST MODEL<br><small>CatBoost ★ AUC 0.847</small>
+                                <div class="worker-pool">
+                                    <span class="worker w1"></span><span class="worker w2"></span><span class="worker w3"></span>
+                                </div>
+                            </div>
+                            <div class="connector"><i class="fas fa-long-arrow-alt-right"></i></div>
+                            <div class="node destination">SHAP + POLICY<br><small>(ROI Engine)</small></div>
+                        </div>
+                        <div class="code-snippet mt-2 code-border">
+                            <pre><code><span class="cmd">catboost</span> <span class="arg">best_model · all_features</span>
+ROC-AUC : <span class="output highlight">0.847 ± 0.012</span>
+F1-Macro: 0.743 ± 0.011
+F1-Churn: 0.629 ± 0.015
+
+ReAct Agent  → <span class="arg">Gemini 2.5 Flash</span>
+Tools: predict | explain | policy | budget</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1B: RAG Financial -->
             <section class="module mt-10">
                 <div class="module-header alternate-3">
-                    <h2><span class="index">01.a</span> > nlp.rag_financiero</h2>
+                    <h2><span class="index">01.b</span> > nlp.rag_financiero</h2>
                     <div class="module-badges">
                         <span class="tech-badge rag-color" style="font-weight:700">RAG</span>
                         <span class="tech-badge rag-color" style="font-weight:700">LLM</span>
@@ -237,10 +301,10 @@
                 </div>
             </section>
 
-            <!-- SECTION 1B: Data Engineering -->
+            <!-- SECTION 1C: Data Engineering -->
             <section class="module mt-10">
                 <div class="module-header alternate">
-                    <h2><span class="index">01.b</span> > infraestructura.data_engineering</h2>
+                    <h2><span class="index">01.c</span> > infraestructura.data_engineering</h2>
                     <div class="module-badges">
                         <span class="tech-badge">GCP Dataflow</span>
                         <span class="tech-badge">Apache Airflow</span>
@@ -302,10 +366,10 @@ dataflow_bucket     = "gs://olist-etl-...-bucket"</code></pre>
                 </div>
             </section>
 
-            <!-- SECTION 1C: Anomaly Detection / Vision -->
+            <!-- SECTION 1D: Anomaly Detection / Vision -->
             <section class="module mt-10">
                 <div class="module-header alternate-2">
-                    <h2><span class="index">01.c</span> > modelos.computer_vision</h2>
+                    <h2><span class="index">01.d</span> > modelos.computer_vision</h2>
                     <div class="module-badges">
                         <span class="tech-badge anomaly-color">DINOv2 ViT</span>
                         <span class="tech-badge anomaly-color">ONNX</span>
