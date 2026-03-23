@@ -4,16 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(77,232,255,0.5)] disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
-          "font-sans rounded-full bg-primary px-6 py-2.5 font-semibold text-primary-foreground hover:bg-primary/90",
+          "rounded-full bg-[linear-gradient(135deg,#4de8ff_0%,#06b6d4_100%)] px-6 py-2.5 font-sans font-semibold text-[#03010a] shadow-[0_0_20px_rgba(77,232,255,0.3)] hover:shadow-[0_0_35px_rgba(77,232,255,0.5)]",
         secondary:
-          "liquid-glass rounded-full px-6 py-2.5 font-normal text-foreground hover:bg-white/5",
+          "liquid-glass rounded-full border border-[rgba(77,232,255,0.25)] px-6 py-2.5 font-sans font-normal text-[rgba(240,236,255,0.85)] hover:bg-[rgba(77,232,255,0.08)]",
         action:
-          "rounded-md border border-primary/30 px-4 py-2 font-mono text-xs uppercase tracking-[0.2em] text-primary hover:border-primary/60 hover:shadow-[0_0_12px_rgba(125,250,107,0.2)]",
+          "action-btn",
       },
     },
     defaultVariants: {

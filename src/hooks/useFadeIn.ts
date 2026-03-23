@@ -9,9 +9,14 @@ export function useFadeIn<T extends HTMLElement>() {
     const element = ref.current;
     if (!element) return;
 
+    element.style.opacity = "0";
+    element.style.transform = "translateY(1.5rem) scale(0.98)";
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0) scale(1)";
           setIsVisible(true);
           observer.unobserve(entry.target);
         }
@@ -26,8 +31,8 @@ export function useFadeIn<T extends HTMLElement>() {
   return {
     ref,
     className: cn(
-      "section-fade-base",
-      isVisible ? "section-fade-visible" : "section-fade-hidden"
+      "fade-in-base",
+      isVisible && "fade-in-visible"
     ),
   };
 }

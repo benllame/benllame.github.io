@@ -6,27 +6,33 @@ export function Footer() {
   const t = translations[lang];
 
   return (
-    <footer className="relative z-10 mt-20 border-t border-border/30 px-4 py-8">
-      <div className="liquid-glass mx-auto max-w-[1200px] rounded-2xl p-6 sm:p-8">
+    <footer className="relative z-10 mt-6 px-4 py-8">
+      <div className="liquid-glass mx-auto max-w-[1200px] rounded-2xl border-t border-t-[rgba(77,232,255,0.08)] bg-[rgba(3,1,10,0.8)] p-6 sm:p-8">
         <div className="grid gap-8 text-sm md:grid-cols-3">
           <div>
-            <p className="font-mono font-semibold text-foreground">
-              <span className="text-primary">~ $</span> ./bllancao.sh
+            <p className="font-mono font-semibold text-[rgba(240,236,255,0.9)]">
+              <span className="neon-gradient-text">~ $</span> ./bllancao.sh
             </p>
-            <p className="mt-2 text-muted-foreground">{t.hero.role}</p>
+            <p className="mt-2 font-mono text-xs text-[rgba(240,236,255,0.35)]">{t.hero.role}</p>
           </div>
 
           <div className="flex flex-col gap-2 md:items-center">
-            <a href="#init" className="text-muted-foreground hover:text-foreground">
+            <a href="#init" className="text-[rgba(240,236,255,0.4)] transition-colors hover:text-[#4de8ff]">
               {t.nav.home}
             </a>
-            <a href="#projects" className="text-muted-foreground hover:text-foreground">
+            <a
+              href="#projects"
+              className="text-[rgba(240,236,255,0.4)] transition-colors hover:text-[#4de8ff]"
+            >
               {t.nav.projects}
             </a>
-            <a href="#stack" className="text-muted-foreground hover:text-foreground">
+            <a href="#stack" className="text-[rgba(240,236,255,0.4)] transition-colors hover:text-[#4de8ff]">
               {t.nav.stack}
             </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground">
+            <a
+              href="#contact"
+              className="text-[rgba(240,236,255,0.4)] transition-colors hover:text-[#4de8ff]"
+            >
               {t.nav.contact}
             </a>
           </div>
@@ -34,7 +40,7 @@ export function Footer() {
           <div className="flex flex-col gap-2 md:items-end">
             <a
               href="mailto:benjallancao@gmail.com"
-              className="text-primary transition-colors hover:text-foreground"
+              className="rounded-md border border-[rgba(77,232,255,0.2)] px-2 py-0.5 font-mono text-xs text-[#4de8ff] transition-all hover:[box-shadow:0_0_12px_rgba(77,232,255,0.2)]"
             >
               {t.footer.links.email}
             </a>
@@ -42,7 +48,7 @@ export function Footer() {
               href="https://www.linkedin.com/in/bllame/"
               target="_blank"
               rel="noreferrer"
-              className="text-primary transition-colors hover:text-foreground"
+              className="rounded-md border border-[rgba(77,232,255,0.2)] px-2 py-0.5 font-mono text-xs text-[#4de8ff] transition-all hover:[box-shadow:0_0_12px_rgba(77,232,255,0.2)]"
             >
               {t.footer.links.linkedin}
             </a>
@@ -50,14 +56,14 @@ export function Footer() {
               href="https://github.com/benllame"
               target="_blank"
               rel="noreferrer"
-              className="text-primary transition-colors hover:text-foreground"
+              className="rounded-md border border-[rgba(77,232,255,0.2)] px-2 py-0.5 font-mono text-xs text-[#4de8ff] transition-all hover:[box-shadow:0_0_12px_rgba(77,232,255,0.2)]"
             >
               {t.footer.links.github}
             </a>
           </div>
         </div>
 
-        <div className="mt-6 border-t border-border/40 pt-4 font-mono text-xs text-muted-foreground">
+        <div className="mt-6 border-t border-[rgba(77,232,255,0.05)] pt-4 font-mono text-xs text-[rgba(240,236,255,0.2)]">
           {t.footer.yearText} · {t.footer.tagline}
         </div>
       </div>
