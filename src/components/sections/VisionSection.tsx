@@ -18,14 +18,14 @@ export function VisionSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
   const fade = useFadeIn<HTMLDivElement>();
-
-  const moduleLabel = t.vision.module.includes(" > ") ? t.vision.module.split(" > ")[1] : t.vision.module;
+  const moduleLabel = "Computer Vision";
 
   return (
     <section id="vision" className="module fade-in-up">
       <div className="module-header alternate-2">
         <h2>
-          <span className="index">01.d</span> &gt; {moduleLabel}
+          <span className="index">01.d</span>
+          <span className="module-name">· {moduleLabel}</span>
         </h2>
         <div className="module-badges">
           {t.vision.badges.map((badge) => (

@@ -10,14 +10,14 @@ export function RAGSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
   const fade = useFadeIn<HTMLDivElement>();
-
-  const moduleLabel = t.rag.module.includes(" > ") ? t.rag.module.split(" > ")[1] : t.rag.module;
+  const moduleLabel = "RAG Financiero";
 
   return (
     <section id="rag" className="module fade-in-up">
       <div className="module-header alternate-3">
         <h2>
-          <span className="index">01.b</span> &gt; {moduleLabel}
+          <span className="index">01.b</span>
+          <span className="module-name">· {moduleLabel}</span>
         </h2>
         <div className="module-badges">
           {t.rag.badges.map((badge) => (

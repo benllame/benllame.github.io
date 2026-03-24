@@ -59,17 +59,7 @@ pre,
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: var(--bg);
-}
-
-.global-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background: #0d0d12;
 }
 
 #root,
@@ -118,7 +108,7 @@ pre,
   background: rgba(13, 13, 18, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 10px;
   color: rgba(240, 238, 248, 0.3);
   letter-spacing: 0.03em;
@@ -358,9 +348,15 @@ pre,
 .module-header h2 {
   font-size: 11px;
   font-weight: 700;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   color: rgba(240, 238, 248, 0.7);
   letter-spacing: 0.03em;
+}
+
+.module-header .module-name {
+  color: rgba(240, 238, 248, 0.8);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
 }
 
 .module-header .index {
@@ -513,18 +509,6 @@ pre,
   pointer-events: none;
 }
 
-#init.hero-module::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-  z-index: 1;
-  pointer-events: none;
-}
-
 #init.hero-module > * {
   position: relative;
   z-index: 2;
@@ -542,7 +526,7 @@ pre,
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(240, 238, 248, 0.35);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 #init .module-header .index {
@@ -616,7 +600,7 @@ pre,
 .terminal-toolbar .title {
   font-size: 10px;
   color: rgba(240, 238, 248, 0.35);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   margin-left: 6px;
 }
 
@@ -671,42 +655,8 @@ pre,
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(240, 238, 248, 0.3);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   margin-bottom: 16px;
-}
-
-.hero-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.hero-stat {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--r-md);
-  padding: 12px 14px;
-}
-
-.hero-stat-val {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 4px;
-  background: var(--grad-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-family: "Fira Code", monospace;
-}
-
-.hero-stat-lbl {
-  font-size: 9px;
-  color: rgba(240, 238, 248, 0.3);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .clean-list {
@@ -740,7 +690,7 @@ pre,
 
 .highlight-contact .label {
   color: rgba(240, 238, 248, 0.3);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .highlight-contact .value.success {
@@ -815,7 +765,7 @@ a.btn-secondary {
   color: rgba(240, 238, 248, 0.25);
   margin-bottom: 12px;
   padding-left: 4px;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .stack-marquee-track {
@@ -916,7 +866,7 @@ a.btn-secondary {
   font-weight: 400;
   opacity: 0.7;
   margin-top: 2px;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .node.source {
@@ -1059,7 +1009,7 @@ a.btn-secondary {
 .interface-header {
   padding: 10px 14px;
   font-size: 10px;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   color: rgba(240, 238, 248, 0.4);
   background: rgba(212, 40, 184, 0.06);
   border-bottom: 1px solid rgba(212, 40, 184, 0.1);
@@ -1089,14 +1039,14 @@ a.btn-secondary {
   color: rgba(240, 238, 248, 0.25);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   margin-bottom: 3px;
 }
 
 .rag-text {
   font-size: 11px;
   color: rgba(240, 238, 248, 0.7);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .rag-pipeline-v {
@@ -1143,14 +1093,14 @@ a.btn-secondary {
   font-weight: 700;
   color: rgba(240, 238, 248, 0.7);
   letter-spacing: 0.05em;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   display: block;
 }
 
 .rn-sub {
   font-size: 8.5px;
   color: rgba(240, 238, 248, 0.3);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   display: block;
   margin-top: 1px;
 }
@@ -1199,7 +1149,7 @@ a.btn-secondary {
   font-weight: 600;
   color: rgba(240, 238, 248, 0.3);
   letter-spacing: 0.06em;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   display: block;
   margin-bottom: 2px;
 }
@@ -1281,7 +1231,7 @@ a.btn-secondary {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 4px;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 11px;
 }
 
@@ -1306,7 +1256,7 @@ a.btn-secondary {
 .bbox-label {
   font-size: 8.5px;
   font-weight: 600;
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   background: rgba(248, 113, 113, 0.12);
   color: #f87171;
   border: 1px solid rgba(248, 113, 113, 0.3);
@@ -1330,7 +1280,7 @@ a.btn-secondary {
 .dash-lbl {
   font-size: 8px;
   color: rgba(240, 238, 248, 0.3);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   letter-spacing: 0.06em;
   display: block;
   margin-bottom: 2px;
@@ -1472,16 +1422,6 @@ a.btn-secondary {
   z-index: 1;
 }
 
-.grid-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
 .cta-content {
   position: relative;
   z-index: 1;
@@ -1529,7 +1469,7 @@ a.btn-secondary {
 .ping-status {
   font-size: 11px;
   color: rgba(240, 238, 248, 0.25);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .contact-array {
@@ -1636,10 +1576,6 @@ a.btn-secondary {
     grid-template-columns: 1fr;
   }
 
-  .hero-stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   #init.hero-module {
     margin: 0 8px 8px;
   }
@@ -1696,10 +1632,6 @@ a.btn-secondary {
   .hero-h1,
   .hero-heading {
     font-size: 32px;
-  }
-
-  .hero-stats-grid {
-    grid-template-columns: 1fr 1fr;
   }
 
   .tech-grid {

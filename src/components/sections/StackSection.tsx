@@ -13,14 +13,10 @@ export function StackSection() {
   const fade = useFadeIn<HTMLDivElement>();
   const colors = ["#4de8ff", "#c084fc", "#22d3ee", "#818cf8", "#a78bfa"];
 
-  const headerLabel = t.stack.header.includes(" > ") ? t.stack.header.split(" > ")[1] : t.stack.header;
-
   return (
     <section id="stack" className="module fade-in-up">
       <div className="module-header">
-        <h2>
-          <span className="index">02</span> &gt; {headerLabel}
-        </h2>
+        <h2>Tech Stack</h2>
       </div>
 
       <div ref={fade.ref} className={cn("module-content", fade.className)}>

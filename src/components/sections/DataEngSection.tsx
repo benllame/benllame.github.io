@@ -9,16 +9,14 @@ export function DataEngSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
   const fade = useFadeIn<HTMLDivElement>();
-
-  const moduleLabel = t.dataEng.module.includes(" > ")
-    ? t.dataEng.module.split(" > ")[1]
-    : t.dataEng.module;
+  const moduleLabel = "Data Engineering";
 
   return (
     <section id="data-eng" className="module fade-in-up">
       <div className="module-header alternate">
         <h2>
-          <span className="index">01.c</span> &gt; {moduleLabel}
+          <span className="index">01.c</span>
+          <span className="module-name">· {moduleLabel}</span>
         </h2>
         <div className="module-badges">
           {t.dataEng.badges.map((badge) => (

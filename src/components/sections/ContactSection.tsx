@@ -9,17 +9,12 @@ export function ContactSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
   const fade = useFadeIn<HTMLDivElement>();
-
-  const moduleLabel = t.contact.module.includes(" > ")
-    ? t.contact.module.split(" > ")[1]
-    : t.contact.module;
+  const sectionLabel = lang === "es" ? "Contacto" : "Contact";
 
   return (
     <section id="contact" className="module fade-in-up">
       <div className="module-header">
-        <h2>
-          <span className="index">03</span> &gt; {moduleLabel}
-        </h2>
+        <h2>{sectionLabel}</h2>
       </div>
 
       <div className="module-content">

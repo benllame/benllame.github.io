@@ -10,7 +10,6 @@ export function CTASection() {
   return (
     <section className="cta-section fade-in-up">
       <div className="cta-inner grainy-cta">
-        <div className="grid-overlay" aria-hidden="true" />
         <div className="cta-content">
           <h2 className="cta-title">{t.cta.title}</h2>
           <p className="cta-desc">{t.cta.desc}</p>

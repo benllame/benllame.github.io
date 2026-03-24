@@ -9,14 +9,14 @@ export function ChurnSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
   const fade = useFadeIn<HTMLDivElement>();
-
-  const moduleLabel = t.churn.module.includes(" > ") ? t.churn.module.split(" > ")[1] : t.churn.module;
+  const moduleLabel = "Churn Intelligence System";
 
   return (
     <section id="churn" className="module fade-in-up">
       <div className="module-header">
         <h2>
-          <span className="index">01.a</span> &gt; {moduleLabel}
+          <span className="index">01.a</span>
+          <span className="module-name">· {moduleLabel}</span>
         </h2>
         <div className="module-badges">
           {t.churn.badges.map((badge) => (

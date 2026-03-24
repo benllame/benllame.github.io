@@ -267,13 +267,6 @@ const stackItems = [
   },
 ];
 
-const heroStats = [
-  { value: "0.847", label: "ROC-AUC · CatBoost" },
-  { value: "0.906", label: "Answer Relevancy" },
-  { value: "28", label: "GCP Resources" },
-  { value: "64fps", label: "Vision Inference" },
-];
-
 export function HeroSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
@@ -303,6 +296,20 @@ export function HeroSection() {
           <span>
             <span className="grad-text">⚡</span> {t.hero.badge}
           </span>
+        </div>
+
+        <div className="stack-marquee-section">
+          <div className="stack-marquee-label">{t.hero.stackLabel}</div>
+          <div className="stack-marquee-track">
+            <div className="stack-marquee-inner" id="stack-marquee">
+              {stackItems.map((item) => (
+                <div className="stack-logo-item" key={item.id} title={item.name}>
+                  <div className="stack-logo-circle">{item.svg}</div>
+                  <span className="stack-logo-name">{item.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="architecture-layout hero-layout">
@@ -343,15 +350,6 @@ export function HeroSection() {
           <div className="profile-summary-box fade-in-right">
             <p className="vis-header">{t.hero.profileHeader}</p>
 
-            <div className="hero-stats-grid">
-              {heroStats.map((stat) => (
-                <div key={stat.label} className="hero-stat">
-                  <div className="hero-stat-val">{stat.value}</div>
-                  <div className="hero-stat-lbl">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
             <ul className="clean-list">
               {t.hero.checks.map((item) => (
                 <li key={item}>
@@ -379,20 +377,6 @@ export function HeroSection() {
                   {t.hero.ctaLinkedIn}
                 </a>
               </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className="stack-marquee-section">
-          <div className="stack-marquee-label">{t.hero.stackLabel}</div>
-          <div className="stack-marquee-track">
-            <div className="stack-marquee-inner" id="stack-marquee">
-              {stackItems.map((item) => (
-                <div className="stack-logo-item" key={item.id} title={item.name}>
-                  <div className="stack-logo-circle">{item.svg}</div>
-                  <span className="stack-logo-name">{item.name}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
