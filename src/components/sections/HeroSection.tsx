@@ -1,10 +1,7 @@
-import { Check, Linkedin, Mail } from "lucide-react";
-import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { useMarqueeLoop } from "@/hooks/useMarqueeLoop";
-import { useTypewriter } from "@/hooks/useTypewriter";
 import { translations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -271,19 +268,12 @@ export function HeroSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
   const fade = useFadeIn<HTMLDivElement>();
-  const lines = useMemo(() => t.hero.terminal.lines, [t.hero.terminal.lines]);
-  const { visibleText, isComplete } = useTypewriter(lines, 30);
   useMarqueeLoop("stack-marquee");
-  const cleanNavHome = t.nav.home.replace(/^\[[^\]]+\]\s*/u, "");
-
-  let remainingChars = visibleText.length;
+  const projectsLabel = lang === "es" ? "Ver proyectos" : "View projects";
+  const cvLabel = lang === "es" ? "Descargar CV" : "Download CV";
 
   return (
     <section id="init" className="module hero-module fade-in-up">
-      <header className="module-header">
-        <h2>{cleanNavHome}</h2>
-      </header>
-
       <div
         ref={fade.ref}
         className={cn(
@@ -298,6 +288,21 @@ export function HeroSection() {
           </span>
         </div>
 
+        <div className="hero-intro">
+          <h1 className="hero-name">Benjamín Llancao</h1>
+          <p className="hero-role grad-text">{t.hero.role}</p>
+          <div className="hero-actions">
+            <Button asChild variant="primary">
+              <a href="#projects">{projectsLabel}</a>
+            </Button>
+            <Button asChild variant="secondary">
+              <a href="https://www.linkedin.com/in/bllame/" target="_blank" rel="noreferrer">
+                {cvLabel}
+              </a>
+            </Button>
+          </div>
+        </div>
+
         <div className="stack-marquee-section">
           <div className="stack-marquee-label">{t.hero.stackLabel}</div>
           <div className="stack-marquee-track">
@@ -308,75 +313,6 @@ export function HeroSection() {
                   <span className="stack-logo-name">{item.name}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="architecture-layout hero-layout">
-          <div className="terminal-window fade-in-left">
-            <div className="terminal-toolbar">
-              <span className="btn close" />
-              <span className="btn min" />
-              <span className="btn max" />
-              <span className="title">{t.hero.terminal.title}</span>
-            </div>
-
-            <div className="terminal-body">
-              {lines.map((line, index) => {
-                const promptText = `${line.prompt}\n`;
-                const outputText = `${line.output}\n`;
-                const promptVisible = promptText.slice(
-                  0,
-                  Math.max(0, Math.min(promptText.length, remainingChars))
-                );
-                remainingChars -= promptVisible.length;
-                const outputVisible = outputText.slice(
-                  0,
-                  Math.max(0, Math.min(outputText.length, remainingChars))
-                );
-                remainingChars -= outputVisible.length;
-
-                return (
-                  <div key={`${line.prompt}-${line.output}`}>
-                    <span className="prompt">{promptVisible}</span>
-                    <span className={cn("output", index === 0 && "highlight")}>{outputVisible}</span>
-                  </div>
-                );
-              })}
-              {isComplete ? <span className="blink">_</span> : null}
-            </div>
-          </div>
-
-          <div className="profile-summary-box fade-in-right">
-            <p className="vis-header">{t.hero.profileHeader}</p>
-
-            <ul className="clean-list">
-              {t.hero.checks.map((item) => (
-                <li key={item}>
-                  <Check className="h-3.5 w-3.5" />
-                  <strong>{item}</strong>
-                </li>
-              ))}
-            </ul>
-
-            <div className="highlight-contact">
-              <span className="label">{t.hero.statusLabel}:</span>
-              <span className="value success">{t.hero.statusValue}</span>
-            </div>
-
-            <div className="contact-actions">
-              <Button asChild variant="primary">
-                <a href="mailto:benjallancao@gmail.com">
-                  <Mail className="h-4 w-4" />
-                  {t.hero.ctaEmail}
-                </a>
-              </Button>
-              <Button asChild variant="secondary">
-                <a href="https://www.linkedin.com/in/bllame/" target="_blank" rel="noreferrer">
-                  <Linkedin className="h-4 w-4" />
-                  {t.hero.ctaLinkedIn}
-                </a>
-              </Button>
             </div>
           </div>
         </div>

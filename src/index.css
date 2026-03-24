@@ -535,6 +535,37 @@ pre,
 
 .hero-content {
   padding: 64px 40px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-intro {
+  max-width: 780px;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: rgba(240, 238, 248, 0.97);
+  margin-bottom: 8px;
+}
+
+.hero-role {
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .hero-badge-wrap {
@@ -751,6 +782,7 @@ a.btn-secondary {
 }
 
 .stack-marquee-section {
+  width: 100%;
   padding: 0 16px;
   margin-top: 12px;
   margin-bottom: 10px;
@@ -1582,6 +1614,10 @@ a.btn-secondary {
 
   .hero-content {
     padding: 40px 20px 36px;
+  }
+
+  .hero-intro {
+    margin-bottom: 6px;
   }
 
   .navbar {
