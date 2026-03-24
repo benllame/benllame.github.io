@@ -271,6 +271,7 @@ export function HeroSection() {
   useMarqueeLoop("stack-marquee");
   const projectsLabel = lang === "es" ? "Ver proyectos" : "View projects";
   const cvLabel = lang === "es" ? "Descargar CV" : "Download CV";
+  const cvPath = "/home/bllancao/Portafolio/portfolio_website/cv_es.pdf";
 
   return (
     <section id="init" className="module hero-module fade-in-up">
@@ -296,7 +297,7 @@ export function HeroSection() {
               <a href="#projects">{projectsLabel}</a>
             </Button>
             <Button asChild variant="secondary">
-              <a href="https://www.linkedin.com/in/bllame/" target="_blank" rel="noreferrer">
+              <a href={cvPath} target="_blank" rel="noreferrer">
                 {cvLabel}
               </a>
             </Button>

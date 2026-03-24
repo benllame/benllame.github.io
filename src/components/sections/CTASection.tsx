@@ -8,7 +8,7 @@ export function CTASection() {
   const t = translations[lang];
 
   return (
-    <section className="cta-section fade-in-up">
+    <section id="contact" className="cta-section fade-in-up">
       <div className="cta-inner grainy-cta">
         <div className="cta-content">
           <h2 className="cta-title">{t.cta.title}</h2>

@@ -787,6 +787,8 @@ a.btn-secondary {
   margin-top: 12px;
   margin-bottom: 10px;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .stack-marquee-label {

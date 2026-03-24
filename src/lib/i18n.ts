@@ -130,11 +130,11 @@ type TranslationSchema = {
 export const translations: Record<Language, TranslationSchema> = {
   es: {
     nav: {
-      home: "[0] INICIO",
-      projects: "[1] PROYECTOS",
-      stack: "[2] STACK",
-      contact: "[3] CONTACTO",
-      repo: "[ REPO ]",
+      home: "INICIO",
+      projects: "PROYECTOS",
+      stack: "STACK",
+      contact: "CONTACTO",
+      repo: "REPO",
     },
     telemetry: {
       status: "DISPONIBLE",
@@ -214,7 +214,7 @@ export const translations: Record<Language, TranslationSchema> = {
         best: "BEST MODEL",
         policy: "SHAP + POLICY",
       },
-      repo: "[ REPO ]",
+      repo: "REPO",
     },
     rag: {
       module: "01.b > nlp.rag_financiero",
@@ -257,7 +257,7 @@ export const translations: Record<Language, TranslationSchema> = {
         precision: "CTX. PRECISION",
         recall: "CTX. RECALL",
       },
-      repo: "[ REPO ]",
+      repo: "REPO",
     },
     dataEng: {
       module: "01.c > infraestructura.data_engineering",
@@ -289,7 +289,7 @@ export const translations: Record<Language, TranslationSchema> = {
         dataflow: "DATAFLOW",
         bigquery: "BIGQUERY",
       },
-      repo: "[ REPO ]",
+      repo: "REPO",
     },
     vision: {
       module: "01.d > modelos.computer_vision",
@@ -315,7 +315,7 @@ export const translations: Record<Language, TranslationSchema> = {
           text: "Pipelines automatizados para testing, validación y release continuo.",
         },
       ],
-      repo: "[ REPO ]",
+      repo: "REPO",
       statusAlert: "OUTLIER_DETECTED",
       ui: {
         engine: "motor_inferencia.exe",
@@ -366,19 +366,19 @@ export const translations: Record<Language, TranslationSchema> = {
       tagline: "CONEXIÓN SEGURA // Fin del sistema.",
       yearText: "© 2026 Benjamín Llancao Mella",
       links: {
-        email: "[ CORREO ]",
-        linkedin: "[ LINKEDIN ]",
-        github: "[ GITHUB ]",
+        email: "CORREO",
+        linkedin: "LINKEDIN",
+        github: "GITHUB",
       },
     },
   },
   en: {
     nav: {
-      home: "[0] HOME",
-      projects: "[1] PROJECTS",
-      stack: "[2] STACK",
-      contact: "[3] CONTACT",
-      repo: "[ REPO ]",
+      home: "HOME",
+      projects: "PROJECTS",
+      stack: "STACK",
+      contact: "CONTACT",
+      repo: "REPO",
     },
     telemetry: {
       status: "AVAILABLE",
@@ -458,7 +458,7 @@ export const translations: Record<Language, TranslationSchema> = {
         best: "BEST MODEL",
         policy: "SHAP + POLICY",
       },
-      repo: "[ REPO ]",
+      repo: "REPO",
     },
     rag: {
       module: "01.b > nlp.rag_financial",
@@ -501,7 +501,7 @@ export const translations: Record<Language, TranslationSchema> = {
         precision: "CTX. PRECISION",
         recall: "CTX. RECALL",
       },
-      repo: "[ REPO ]",
+      repo: "REPO",
     },
     dataEng: {
       module: "01.c > infrastructure.data_engineering",
@@ -533,7 +533,7 @@ export const translations: Record<Language, TranslationSchema> = {
         dataflow: "DATAFLOW",
         bigquery: "BIGQUERY",
       },
-      repo: "[ REPO ]",
+      repo: "REPO",
     },
     vision: {
       module: "01.d > models.computer_vision",
@@ -559,7 +559,7 @@ export const translations: Record<Language, TranslationSchema> = {
           text: "Automated pipelines for tests, validation gates, and release flow.",
         },
       ],
-      repo: "[ REPO ]",
+      repo: "REPO",
       statusAlert: "OUTLIER_DETECTED",
       ui: {
         engine: "inference_engine.exe",
@@ -610,9 +610,9 @@ export const translations: Record<Language, TranslationSchema> = {
       tagline: "SECURE CONNECTION // End of system.",
       yearText: "© 2026 Benjamín Llancao Mella",
       links: {
-        email: "[ EMAIL ]",
-        linkedin: "[ LINKEDIN ]",
-        github: "[ GITHUB ]",
+        email: "EMAIL",
+        linkedin: "LINKEDIN",
+        github: "GITHUB",
       },
     },
   },

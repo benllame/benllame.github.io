@@ -4,7 +4,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { TelemetryBar } from "@/components/layout/TelemetryBar";
 import { CTASection } from "@/components/sections/CTASection";
 import { ChurnSection } from "@/components/sections/ChurnSection";
-import { ContactSection } from "@/components/sections/ContactSection";
 import { DataEngSection } from "@/components/sections/DataEngSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { RAGSection } from "@/components/sections/RAGSection";
@@ -25,7 +24,6 @@ function PortfolioApp() {
           <VisionSection />
         </div>
         <StackSection />
-        <ContactSection />
         <CTASection />
       </main>
       <Footer />
