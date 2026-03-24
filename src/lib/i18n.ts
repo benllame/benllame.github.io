@@ -110,6 +110,12 @@ type TranslationSchema = {
     ctaEmail: string;
     ctaLinkedIn: string;
   };
+  cta: {
+    title: string;
+    desc: string;
+    email: string;
+    linkedin: string;
+  };
   footer: {
     tagline: string;
     yearText: string;
@@ -350,6 +356,12 @@ export const translations: Record<Language, TranslationSchema> = {
       ctaEmail: "Enviar Correo",
       ctaLinkedIn: "Conectar en LinkedIn",
     },
+    cta: {
+      title: "Disponible para nuevos proyectos",
+      desc: "Abierto a roles de Data Scientist, ML Engineer o posiciones que involucren sistemas de IA en producción.",
+      email: "Enviar mensaje",
+      linkedin: "Ver LinkedIn",
+    },
     footer: {
       tagline: "CONEXIÓN SEGURA // Fin del sistema.",
       yearText: "© 2026 Benjamín Llancao Mella",
@@ -587,6 +599,12 @@ export const translations: Record<Language, TranslationSchema> = {
       channelsOpen: "Communication channels open:",
       ctaEmail: "Send Email",
       ctaLinkedIn: "Connect on LinkedIn",
+    },
+    cta: {
+      title: "Available for new projects",
+      desc: "Open to Data Scientist and ML Engineer roles, or positions involving production AI systems.",
+      email: "Send message",
+      linkedin: "View LinkedIn",
     },
     footer: {
       tagline: "SECURE CONNECTION // End of system.",

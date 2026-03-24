@@ -10,18 +10,20 @@ export function useFadeIn<T extends HTMLElement>() {
     if (!element) return;
 
     element.style.opacity = "0";
-    element.style.transform = "translateY(1.5rem) scale(0.98)";
+    element.style.transform = "translateY(20px)";
+    element.style.transition =
+      "opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1)";
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           element.style.opacity = "1";
-          element.style.transform = "translateY(0) scale(1)";
+          element.style.transform = "translateY(0)";
           setIsVisible(true);
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
     );
 
     observer.observe(element);
@@ -30,9 +32,6 @@ export function useFadeIn<T extends HTMLElement>() {
 
   return {
     ref,
-    className: cn(
-      "fade-in-base",
-      isVisible && "fade-in-visible"
-    ),
+    className: cn("fade-in-base", isVisible && "fade-in-visible"),
   };
 }

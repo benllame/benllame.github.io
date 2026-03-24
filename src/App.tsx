@@ -1,8 +1,8 @@
-import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { TelemetryBar } from "@/components/layout/TelemetryBar";
+import { CTASection } from "@/components/sections/CTASection";
 import { ChurnSection } from "@/components/sections/ChurnSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { DataEngSection } from "@/components/sections/DataEngSection";
@@ -14,12 +14,11 @@ import { VisionSection } from "@/components/sections/VisionSection";
 function PortfolioApp() {
   return (
     <>
-      <AnimatedBackground />
       <TelemetryBar />
       <Navbar />
-      <main className="relative z-10 mx-auto max-w-[1200px] px-4 pb-8 pt-28 sm:px-6 lg:px-8">
+      <main className="site-content">
         <HeroSection />
-        <div id="projects" className="space-y-20 py-16">
+        <div id="projects" className="projects-stack">
           <ChurnSection />
           <RAGSection />
           <DataEngSection />
@@ -27,8 +26,8 @@ function PortfolioApp() {
         </div>
         <StackSection />
         <ContactSection />
+        <CTASection />
       </main>
-      <div className="footer-fade relative z-10" aria-hidden="true" />
       <Footer />
     </>
   );

@@ -2,7 +2,6 @@ import { Brain, Code2, Database, MessageSquareText, Server } from "lucide-react"
 import type { LucideIcon } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useFadeIn } from "@/hooks/useFadeIn";
-import { useGlowPulse } from "@/hooks/useGlowPulse";
 import { translations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -14,30 +13,30 @@ export function StackSection() {
   const fade = useFadeIn<HTMLDivElement>();
   const colors = ["#4de8ff", "#c084fc", "#22d3ee", "#818cf8", "#a78bfa"];
 
+  const headerLabel = t.stack.header.includes(" > ") ? t.stack.header.split(" > ")[1] : t.stack.header;
+
   return (
-    <section id="stack" className="py-16">
-      <div className="liquid-glass mx-auto mb-8 w-fit rounded-full border border-[rgba(77,232,255,0.2)] px-4 py-2 [box-shadow:0_0_20px_rgba(77,232,255,0.08)]">
-        <span className="neon-gradient-text font-mono text-sm">{t.stack.header}</span>
+    <section id="stack" className="module fade-in-up">
+      <div className="module-header">
+        <h2>
+          <span className="index">02</span> &gt; {headerLabel}
+        </h2>
       </div>
 
-      <div
-        ref={fade.ref}
-        className={cn(
-          "grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5",
-          fade.className
-        )}
-      >
-        {t.stack.cards.map((card, index) => {
-          return (
-            <TechCard
-              key={card.title}
-              icon={iconMap[index] ?? Code2}
-              iconColor={colors[index] ?? colors[0]}
-              title={card.title}
-              items={card.items}
-            />
-          );
-        })}
+      <div ref={fade.ref} className={cn("module-content", fade.className)}>
+        <div className="tech-grid">
+          {t.stack.cards.map((card, index) => {
+            return (
+              <TechCard
+                key={card.title}
+                icon={iconMap[index] ?? Code2}
+                iconColor={colors[index] ?? colors[0]}
+                title={card.title}
+                items={card.items}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -54,21 +53,13 @@ function TechCard({
   title: string;
   items: string;
 }) {
-  const cardGlow = useGlowPulse<HTMLElement>();
-
   return (
-    <article
-      ref={cardGlow.ref}
-      className="liquid-glass rounded-2xl p-6 transition-all duration-300 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5 hover:border-[rgba(77,232,255,0.2)] hover:bg-[rgba(77,232,255,0.035)] hover:[box-shadow:0_0_30px_rgba(77,232,255,0.06)]"
-    >
-      <div
-        className="flex h-10 w-10 items-center justify-center rounded-xl border border-[rgba(77,232,255,0.15)] bg-[rgba(77,232,255,0.08)]"
-        style={{ color: iconColor, filter: "drop-shadow(0 0 6px rgba(77, 232, 255, 0.4))" }}
-      >
-        <Icon className="h-5 w-5" />
+    <article className="tech-card">
+      <div className="card-icon" style={{ color: iconColor }}>
+        <Icon className="h-4 w-4" />
       </div>
-      <h3 className="mt-4 font-sans text-sm font-semibold text-[rgba(240,236,255,0.9)]">{title}</h3>
-      <p className="mt-2 font-mono text-xs leading-6 text-[rgba(240,236,255,0.45)]">{items}</p>
+      <h3>{title}</h3>
+      <p>{items}</p>
     </article>
   );
 }
