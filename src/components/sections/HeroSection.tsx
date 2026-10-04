@@ -271,7 +271,7 @@ export function HeroSection() {
   useMarqueeLoop("stack-marquee");
   const projectsLabel = lang === "es" ? "Ver proyectos" : "View projects";
   const cvLabel = lang === "es" ? "Descargar CV" : "Download CV";
-  const cvPath = "/home/bllancao/Portafolio/portfolio_website/cv_es.pdf";
+  const cvPath = new URL("../../../cv_es.pdf", import.meta.url).href;
 
   return (
     <section id="init" className="module hero-module fade-in-up">
@@ -290,11 +290,13 @@ export function HeroSection() {
         </div>
 
         <div className="hero-intro">
-          <h1 className="hero-name">Benjamín Llancao</h1>
+          <p className="hero-eyebrow">{lang === "es" ? "PORTAFOLIO / DATOS & IA" : "PORTFOLIO / DATA & AI"}</p>
+          <h1 className="hero-name">Benjamín<br /><span>Llancao<span className="hero-period">.</span></span></h1>
           <p className="hero-role grad-text">{t.hero.role}</p>
+          <p className="hero-focus">{t.hero.focus}</p>
           <div className="hero-actions">
             <Button asChild variant="primary">
-              <a href="#projects">{projectsLabel}</a>
+              <a href="#projects">{projectsLabel} <span aria-hidden="true">↗</span></a>
             </Button>
             <Button asChild variant="secondary">
               <a href={cvPath} target="_blank" rel="noreferrer">
@@ -302,6 +304,12 @@ export function HeroSection() {
               </a>
             </Button>
           </div>
+        </div>
+
+        <div className="hero-art" aria-hidden="true">
+          <div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" />
+          <div className="orbit-core">BL<span>DATA / AI</span></div>
+          <span className="orbit-caption">FROM DATA TO IMPACT ↗</span>
         </div>
 
         <div className="stack-marquee-section">

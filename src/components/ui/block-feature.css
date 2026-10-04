@@ -1,0 +1,30 @@
+.block-feature {
+  width: min(100%, 1000px);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.block-feature__canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.block-feature__rider {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.block-feature__logo {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 700px) {
+  .block-feature__canvas {
+    width: min(520px, calc(100vw + 160px));
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
